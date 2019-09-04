@@ -109,7 +109,7 @@ function connectToChatkit(event) {
     isLoading: true,
   });
 
-  axios.post('http://localhost:5200/get_users')
+  axios.post('https://dheeraj-chat-app-backend.herokuapp.com/get_users')
     .then((users) => {
       let user_list = users.data
       this.setState({
@@ -118,10 +118,10 @@ function connectToChatkit(event) {
     })
 
   axios
-    .post('http://localhost:5200/users', { userId })
+    .post('https://dheeraj-chat-app-backend.herokuapp.com/users', { userId })
     .then(() => {
       const tokenProvider = new Chatkit.TokenProvider({
-        url: 'http://localhost:5200/authenticate',
+        url: 'https://dheeraj-chat-app-backend.herokuapp.com/authenticate',
       });
 
       const chatManager = new Chatkit.ChatManager({
