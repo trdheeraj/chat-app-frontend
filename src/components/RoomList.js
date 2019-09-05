@@ -24,6 +24,9 @@ const RoomList = props => {
         ) : (
           <span className="room-name">{room.name}</span>
         )}
+        {room.unreadCount > 0 ? (
+          <span className="room-unread">{room.unreadCount}</span>
+        ): null}
       </li>
     );
     if(room.customData && room.customData.isDirectMessage){

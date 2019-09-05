@@ -248,3 +248,16 @@ html {
     }
 
     a { cursor: pointer; }
+
+    .room-unread {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      line-height: 20px;
+      border-radius: 70%;
+      font-size: 16px;
+      text-align: center;
+      padding: 2px;
+      background-color: grey;
+      color: #222;
+    }

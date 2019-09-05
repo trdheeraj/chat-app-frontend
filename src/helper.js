@@ -64,6 +64,15 @@ function connectToRoom(id = '8ec10840-ba30-4181-a450-41bf6cb70ea3') {
           this.setState({
             messages: [...this.state.messages, message],
           });
+
+          const { currentRoom } = this.state;
+
+          if (currentRoom === null) return;
+
+          return currentUser.setReadCursor({
+            roomId: currentRoom.id,
+            position: message.id,
+          });
         },
         onPresenceChanged: () => {
           const { currentRoom } = this.state;
